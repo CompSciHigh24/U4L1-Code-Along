@@ -1,38 +1,29 @@
 // Step 1: Create a "public" folder
 
-// Step 2: In this directory move your static files like HTML, CSS, and JavaScript. (Not your index.js, this is your express file.)
+// Step 2: In this folder move your static files like HTML, CSS, and JavaScript. (Not your index.js, this is server side js!)
 
-// Step 3: Set up an Express.js server.
-// Import the Express module.
-// Create an Express application.
+const express = require("express")
+const app = express()
 
-
-
-
-
-// Step 4: Set Up Middleware for Logging
-// Console log the method and path of every request. 
+app.use((req, res, next) => {
+  console.log(`${req.method} ${req.url}`)
+  next()
+})
 
 
 
-
-
-// Step 5: Serve Static Files
+// Step 3: Serve Static Files w/ middleware
 // Remeber to use the variable __dirname
 
 
 
 
-
-// Step 6: Create a route handler for the home route
-// Once inside sent the file index.html
-
+// Step 4: Create a route handler for the home route
+// Once inside send the file index.html
 
 
 
 
-// Step 6: Start the Server and run your application. 
-
-
-
-
+app.listen(3000, () => {
+  console.log("Server is serving")
+})
